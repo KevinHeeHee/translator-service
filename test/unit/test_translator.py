@@ -1,5 +1,4 @@
 from src.translator import translate_content, query_llm_basic
-import vertexai
 from mock import patch, Mock
 
 def test_chinese():
