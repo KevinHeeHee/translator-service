@@ -1,7 +1,7 @@
-from vertexai.preview.language_models import ChatModel, InputOutputTextPair
 from google.auth.credentials import Credentials
 from google.oauth2 import service_account
 from google.cloud import aiplatform
+from vertexai.preview.language_models import ChatModel, InputOutputTextPair
 
 credentials = service_account.Credentials.from_service_account_info({
     "type": "service_account",
