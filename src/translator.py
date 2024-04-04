@@ -4,7 +4,20 @@ from google.cloud import aiplatform
 from vertexai.preview.language_models import ChatModel, InputOutputTextPair
 import os
 
-credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
+creds = {
+  "type": "service_account",
+  "project_id": "project-419321",
+  "private_key_id": os.environ['PRIVATE_KEY_ID'],
+  "private_key": os.environ["PRIVATE_KEY"],
+  "client_email": os.enviorn["CLIENT_EMAIL"],
+  "client_id": os.environ['CLIENT_ID'],
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/133740138345-compute%40developer.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+credentials = service_account.Credentials.from_service_account_info(creds)
 aiplatform.init(project="project-419321", credentials=credentials)
 
 # function whose return type is changed by mocking
