@@ -4,7 +4,7 @@ from google.cloud import aiplatform
 from vertexai.preview.language_models import ChatModel, InputOutputTextPair
 import os
 
-credentials = os.environ['CREDENTIALS']
+credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
 aiplatform.init(project="project-419321", credentials=credentials)
 
 # function whose return type is changed by mocking
