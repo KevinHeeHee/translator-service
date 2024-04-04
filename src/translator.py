@@ -78,6 +78,4 @@ def translate_content(post:str):
         return (False, "This is gibberish")
     if content == "Qual é o trabalho e a extensão do algoritmo de Dijkstra?":
         return (False, "What is the work and span of Dijkstra's Algorithm?")
-    if ord(content[0]) >= ord("0") and ord(content[0]) <= ord("9"):
-        return (False, "We cannot translate because you inputed a number")
     return True, content
