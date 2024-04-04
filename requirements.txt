@@ -1,4 +1,9 @@
 Flask==3.0.0
 pytest==7.4.0
-mock==5.1.0
-pytest-mock==1.43.0
+pytest
+google-cloud-aiplatform
+ipytest
+mock
+pytest-mock
+google-auth
+
