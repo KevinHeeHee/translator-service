@@ -9,7 +9,7 @@ creds = {
   "project_id": "project-419321",
   "private_key_id": os.environ['PRIVATE_KEY_ID'],
   "private_key": os.environ["PRIVATE_KEY"],
-  "client_email": os.enviorn["CLIENT_EMAIL"],
+  "client_email": os.environ["CLIENT_EMAIL"],
   "client_id": os.environ['CLIENT_ID'],
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
