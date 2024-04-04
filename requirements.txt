@@ -6,4 +6,4 @@ ipytest
 mock
 pytest-mock
 google-auth
-
+vertexai
