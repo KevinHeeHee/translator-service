@@ -4,8 +4,24 @@ from google.cloud import aiplatform
 from vertexai.preview.language_models import ChatModel, InputOutputTextPair
 import os
 
-credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
-aiplatform.init(project="project-419321", credentials=credentials)
+if os.environ.get('PRIVATE_KEY') != None:
+    os.environ['GOOGLE_CLOUD_PROJECT'] = "llm-project-419400"
+    os.environ['PRIVATE_KEY'] = os.environ['PRIVATE_KEY'].replace('\\n', '\n')
+    creds = {
+        "type": "service_account",
+        "project_id": "llm-project-419400",
+        "private_key_id": str(os.environ['PRIVATE_KEY_ID']),
+        "private_key": str(os.environ['PRIVATE_KEY']),
+        "client_email": "561147812575-compute@developer.gserviceaccount.com",
+        "client_id": "111582157382499883679",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/561147812575-compute%40developer.gserviceaccount.com",
+        "universe_domain": "googleapis.com"
+        }
+    credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
+    aiplatform.init(project="project-419321", credentials=credentials)
 
 # function whose return type is changed by mocking
 def query_llm_basic(content):
