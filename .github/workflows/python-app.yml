@@ -36,9 +36,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       env:
-          PRIVATE_KEY_ID: ${{ secrets.PRIVATE_KEY_ID }}
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        PRIVATE_KEY_ID: ${{ secrets.PRIVATE_KEY_ID }}
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       run: |
         pytest
