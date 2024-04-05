@@ -50,6 +50,13 @@ def get_translation(post: str) -> str:
     response = chat.send_message(post, **parameters)
     return response.text
 
+def no_chars(post:str) -> bool:
+  no_chars = True
+  for i in "abcdefghijklmnopqrstuvwxyz":
+    if i in post:
+      no_chars = False
+  return no_chars
+
 def translate_content(post:str):
     try:
         error_messages = ["I'm not able to help with that, as I'm only a language model", "I don't understand your request", "I can't translate"]
@@ -60,7 +67,7 @@ def translate_content(post:str):
             return(False, "We were unable to translate this post.")
         else:
             response = get_translation(post)
-            if response in error_messages:
+            if response in error_messages or no_chars(response):
                 return (False, "We were unable to translate this post.")
             else:
                 return (False, response)
