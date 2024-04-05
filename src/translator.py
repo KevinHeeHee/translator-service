@@ -22,6 +22,8 @@ if os.environ.get('PRIVATE_KEY') != None:
         }
     credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
     aiplatform.init(project="project-419321", credentials=credentials)
+ject="project-419321", credentials=credentials)
+
 
 # function whose return type is changed by mocking
 def query_llm_basic(content):
