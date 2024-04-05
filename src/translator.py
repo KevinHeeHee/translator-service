@@ -20,8 +20,8 @@ if os.environ.get('PRIVATE_KEY') != None:
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/561147812575-compute%40developer.gserviceaccount.com",
         "universe_domain": "googleapis.com"
         }
-    credentials = service_account.Credentials.from_service_account_info(os.environ['CREDENTIALS'])
-    aiplatform.init(project="project-419321", credentials=credentials)
+    credentials = service_account.Credentials.from_service_account_info(creds)
+    aiplatform.init(project="llm-project-419400", credentials=credentials)
 
 
 # function whose return type is changed by mocking
